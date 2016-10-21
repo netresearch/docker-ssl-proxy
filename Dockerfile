@@ -15,3 +15,7 @@ RUN apt-get update \
  && rm -rf /usr/share/doc/* \
  && rm -rf /var/lib/apt/lists/* \
  && rm -f /var/cache/apt/*.bin
+
+RUN { \
+      echo 'client_max_body_size 100m;'; \
+    } > /etc/nginx/conf.d/my_proxy.conf
